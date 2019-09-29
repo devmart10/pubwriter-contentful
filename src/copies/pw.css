@@ -1,0 +1,97 @@
+/* Pubwriter CSS file */
+
+/*
+_____       _ __          __   _ _
+|  __ \     | |\ \        / /  (_) |
+| |__) |   _| |_\ \  /\  / / __ _| |_ ___ _ __
+|  ___/ | | | '_ \ \/  \/ / '__| | __/ _ \ '__|
+| |   | |_| | |_) \  /\  /| |  | | ||  __/ |
+|_|    \__,_|_.__/ \/  \/ |_|  |_|\__\___|_|
+
+*/
+
+@import url(//fonts.googleapis.com/css?family=Raleway);
+
+h1, h2, h3, h4, h5, h6, p, a, div {
+    font-family: "Raleway";
+}
+
+body {
+    background: url(https://pubwriter.com/images/net.jpg);
+}
+
+/* Don't print link hrefs */
+@media print {
+    a[href]:after {
+        content: none;
+    }
+}
+
+.pubwriter {
+    margin: 5rem 0 2rem;
+    padding: 1rem 3rem;
+  }
+
+/* Default to centering header text */
+.pubwriter h1 {
+    text-align: center;
+}
+
+/* Increase font size of bulleted and numbered lists */
+.pubwriter li {
+    font-size: 1.1rem;
+}
+
+/* Make font larger and increase default spacing */
+.pubwriter p {
+    font-size: 1.2rem;
+    line-height: 1.7em;
+}
+
+/* Make the default line break darker */
+.pubwriter hr {
+    border-color: #d5d5d5;
+}
+
+/* Images Q: Responsive and centered by default? */
+
+/* Center all Images Responsive */
+.pubwriter img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  }
+
+/* Responsive but NOT centered? */
+/* .pubwriter img { */
+    /* display: inline-block; */
+    /* height: auto; */
+    /* max-width: 100%; */
+/* } */
+
+/* Responsive embedded videos */
+.pubwriter .video-container {
+    position: relative;
+    padding-bottom: 25em;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Responsive embedded videos */
+.pubwriter .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*height: 100%*/
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    /* Make font normal size on mobile */
+    .pubwriter p {
+        font-size: 1rem;
+    }
+}
