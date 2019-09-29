@@ -1,4 +1,5 @@
 .hero {
+  margin-top: 80px;
   position: relative;
   background: #000;
   color: #fff;
@@ -24,13 +25,13 @@
   padding: 0 0.5em;
 }
 
-@media(min-width: 600px) {
+@media (min-width: 600px) {
   .heroDetails {
     font-size: 16px;
   }
 }
 
-@media(min-width: 1000px) {
+@media (min-width: 1000px) {
   .heroDetails {
     font-size: 20px;
   }

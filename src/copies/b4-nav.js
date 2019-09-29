@@ -2,7 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const Navigation = () => (
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <nav
+    class="navbar navbar-expand-lg fixed-top navbar-dark"
+    style={{ backgroundColor: 'black' }}
+  >
     <div class="container">
       <a href="https://pubwriter.net" class="navbar-brand h1 mb-0">
         PubWriter
