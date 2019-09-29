@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
+
 import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
@@ -14,6 +16,7 @@ class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
+    const main = get(this, 'props.data.contentfulBlogPost')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
     return (
@@ -54,7 +57,19 @@ class RootIndex extends React.Component {
               crossorigin="anonymous"
             />
           </Helmet>
-          <Hero data={author.node} />
+          {/* <Img fluid={main.heroImage.fluid} /> */}
+          <Hero data={main} />
+          <div className="container">
+            <div className="pubwriter">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: main.body.childMarkdownRemark.html,
+                }}
+              />
+            </div>
+          </div>
+
+          {/* <Hero data={author.node} />
           <div className="wrapper">
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
@@ -66,7 +81,7 @@ class RootIndex extends React.Component {
                 )
               })}
             </ul>
-          </div>
+          </div> */}
         </div>
       </Layout>
     )
@@ -80,6 +95,20 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    contentfulBlogPost(slug: { eq: "welcome-to-pubwriter" }) {
+      title
+      publishDate(formatString: "MMMM Do, YYYY")
+      heroImage {
+        fluid(maxWidth: 1180, background: "rgb:000000") {
+          ...GatsbyContentfulFluid_tracedSVG
+        }
+      }
+      body {
+        childMarkdownRemark {
+          html
+        }
       }
     }
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
