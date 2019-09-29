@@ -1,0 +1,36 @@
+@import url(//fonts.googleapis.com/css?family=Muli);
+
+body {
+  background: none;
+}
+.navbar {
+  background-color: black !important;
+}
+.pubwriter {
+  box-shadow: none;
+  border: none;
+  margin: 5rem 0 2rem;
+}
+
+.pubwriter h1, .pubwriter h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.pubwriter h1 {
+  margin: 1rem 0;
+}
+.pubwriter h2 {
+  margin: 3rem 0;
+}
+.pubwriter p {
+  font-family: "Muli";
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+/* .pubwriter a {
+  color: #900;
+} */
+/* .pubwriter a:hover {
+  text-decoration: underline;
+  color: #23527c;
+} */
