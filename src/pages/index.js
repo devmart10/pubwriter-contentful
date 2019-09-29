@@ -68,8 +68,6 @@ class RootIndex extends React.Component {
               />
             </div>
           </div>
-
-          {/* <Hero data={author.node} />
           <div className="wrapper">
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
@@ -81,7 +79,8 @@ class RootIndex extends React.Component {
                 )
               })}
             </ul>
-          </div> */}
+          </div>{' '}
+          */}
         </div>
       </Layout>
     )
